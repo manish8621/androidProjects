@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.rockpaperscissor.game.GameViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.rockpaperscissor.game.GameFragment">
+
+
+        <ImageView
+            android:id="@+id/player_move_iv"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginEnd="4dp"
+            android:padding="30dp"
+            android:src="@drawable/ready"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/paper_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/player" />
+
+        <ImageView
+            android:id="@+id/computer_move_iv"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:padding="30dp"
+            android:src="@drawable/ready"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/paper_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/computer" />
+
+        <TextView
+            android:id="@+id/computer_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/computer"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/computer_move_iv"
+            app:layout_constraintEnd_toEndOf="@+id/computer_move_iv"
+            app:layout_constraintStart_toStartOf="@+id/computer_move_iv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/computer_score_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@{@string/score(viewModel.computerScore)}"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/computer_move_iv"
+            app:layout_constraintEnd_toEndOf="@+id/computer_title_tv"
+            app:layout_constraintStart_toStartOf="@+id/computer_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/computer_title_tv" />
+
+        <TextView
+            android:id="@+id/player_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/player"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/player_move_iv"
+            app:layout_constraintEnd_toEndOf="@+id/player_move_iv"
+            app:layout_constraintStart_toStartOf="@+id/player_move_iv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/player_score_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@{@string/score(viewModel.playerScore)}"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/player_move_iv"
+            app:layout_constraintEnd_toEndOf="@+id/player_title_tv"
+            app:layout_constraintStart_toStartOf="@+id/player_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/player_title_tv" />
+
+
+
+        <Button
+            android:id="@+id/next_button"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/neumorphic_color"
+            android:text="Next"
+            android:textColor="@color/neumorphic_shadow"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/scissor_btn"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/scissor"
+            android:tag="Scissor"
+            app:layout_constraintBottom_toBottomOf="@+id/paper_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/paper_btn"
+            app:layout_constraintTop_toTopOf="@+id/paper_btn" />
+
+        <ImageView
+            android:id="@+id/paper_btn"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/paper"
+            android:tag="Paper"
+            android:textColor="@color/neumorphic_shadow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/scissor_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/rock_btn" />
+
+        <ImageView
+            android:id="@+id/rock_btn"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:backgroundTint="#B3E5FC"
+            android:shadowColor="#606060"
+            android:src="@drawable/rock"
+            android:tag="Rock"
+            android:textColor="@color/neumorphic_shadow"
+            app:layout_constraintBottom_toBottomOf="@+id/paper_btn"
+            app:layout_constraintEnd_toStartOf="@+id/paper_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/paper_btn" />
+
+        <TextView
+            android:id="@+id/result_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.result}"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/paper_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/computer_move_iv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

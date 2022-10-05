@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/gameFragment">
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.rockpaperscissor.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.rockpaperscissor.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_secondFragment_to_lastFragment"
+            app:destination="@id/lastFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lastFragment"
+        android:name="com.example.rockpaperscissor.LastFragment"
+        android:label="fragment_last"
+        tools:layout="@layout/fragment_last" />
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.rockpaperscissor.game.GameFragment"
+        android:label="GameFragment" >
+        <action
+            android:id="@+id/action_gameFragment_to_firstFragment3"
+            app:destination="@id/firstFragment" />
+    </fragment>
+</navigation>

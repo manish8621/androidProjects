@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Rock Paper Scissor</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tie">👨🏻🤝🏻🤖</string>
+    <string name="human_won">💪🏼👨🏻</string>
+    <string name="computer_won">🦾🤖</string>
+    <string name="score">Score:<i>%d</i></string>
+    <string name="computer">Computer</string>
+    <string name="player">Player</string>
+</resources>
